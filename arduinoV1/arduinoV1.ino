@@ -17,7 +17,7 @@ void readSensor() {
   h ++;
    t ++;
   
-  float hic = "lala hic"
+  float hic = 66;
   Serial.print("Humidity: ");
   Serial.print(h);
   Serial.print(" %\t");

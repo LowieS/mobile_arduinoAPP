@@ -1,22 +1,25 @@
- float h = 0;
- float t = 0;
+ float h = 5;
+ float t = 6;
 
 void setup() {
   Serial.begin(9600);
   }
 
 void loop()
-{  char c; 
-if(Serial.available())  
-  {  
-   c = Serial.read();  
+{  
+   char c;
+if(Serial.available())
+  {
+   c = Serial.read();
    if(c=='t')
    readSensor();
-  }}
+  }
+ 
+ }
 void readSensor() {
-  h ++;
-   t ++;
   
+  h++;
+  t++;
   float hic = 66;
   Serial.print("Humidity: ");
   Serial.print(h);
@@ -28,4 +31,3 @@ void readSensor() {
   Serial.print(hic);
   Serial.print(" *C ");
 }
-// poikhkh

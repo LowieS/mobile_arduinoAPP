@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
 
                     try {
                        int byteCount = inputStream.available();
-                        Log.d("MyTagGoesHere", String.valueOf(byteCount));
+
                         if (byteCount > 0) {
 
                             byte[] rawBytes = new byte[byteCount];
@@ -172,6 +172,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void SendT(View view) {
         String string = "t";
+        string.concat("\n");
+        try {
+            outputStream.write(string.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        textView.append("\nSent Data:"+string+"\n");
+
+    }
+    public void SendF(View view) {
+        String string = "f";
         string.concat("\n");
         try {
             outputStream.write(string.getBytes());

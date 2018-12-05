@@ -1,31 +1,46 @@
- float h = 0;
- float t = 0;
-
-void setup() {
-  Serial.begin(9600);
-  }
-
-void loop()
-{  char c; 
-if(Serial.available())  
-  {  
-   c = Serial.read();  
-   if(c=='t')
-   readSensor();
-  }}
-void readSensor() {
-  h ++;
-   t ++;
+char c;
+void setup()  
+{  
+  Serial.begin(9600);   
+  pinMode(2,OUTPUT); 
+  pinMode(3,OUTPUT);  
+ 
+}  
   
-  float hic = 66;
-  Serial.print("Humidity: ");
-  Serial.print(h);
-  Serial.print(" %\t");
-  Serial.print("Temperature: ");
-  Serial.print(t);
-  Serial.print(" *C ");
-  Serial.print("Heat index: ");
-  Serial.print(hic);
-  Serial.print(" *C ");
+void loop()  
+{  
+  
+     
+     if (Serial.available())  
+     {  
+       c = Serial.read();
+    
+       if(c=='t'){
+        
+        DataT();
+
+        digitalWrite(2,HIGH);
+        digitalWrite(3,LOW);
+       }
+
+       if(c=='f'){
+        
+        DataF();
+        digitalWrite(3,HIGH);
+        digitalWrite(2,LOW);
+       }
+        
+     
+    } 
+} 
+
+void DataT(){
+  Serial.println ("eerste data:");
+  Serial.println ("blabbla");
+  
 }
-// poikhkh
+
+void DataF(){
+  Serial.println ("tweede data:");
+  Serial.println ("bloebloe");
+}

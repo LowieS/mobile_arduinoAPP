@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
             for (BluetoothDevice iterator : bondedDevices) {
 
-                if (iterator.getName().equals("michie")) //Replace with iterator.getName() if comparing Device names.
+                if (iterator.getName().equals("lowie")) //Replace with iterator.getName() if comparing Device names.
 
                 {
 
@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
             {
 
                 ReadData();
-                textView.append("\nConnection Opened!\n");
+                Toast.makeText(getApplicationContext(), "connection", Toast.LENGTH_SHORT).show();
             }
 
         }

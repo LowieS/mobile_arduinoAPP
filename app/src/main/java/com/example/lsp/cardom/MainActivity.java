@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private final UUID PORT_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");//Serial Port Service ID
     BluetoothDevice device;
     private BluetoothSocket socket;
-    private OutputStream outputStream;
+    public OutputStream outputStream;
     private InputStream inputStream;
     TextView textView;
     byte buffer[];
@@ -126,8 +126,9 @@ public class MainActivity extends AppCompatActivity {
         {
             if(connect())
             {
+                Intent intent1 = new Intent(this,Main2Activity.class);
+                startActivity(intent1);
 
-                ReadData();
                 Toast.makeText(getApplicationContext(), "connection", Toast.LENGTH_SHORT).show();
             }
 

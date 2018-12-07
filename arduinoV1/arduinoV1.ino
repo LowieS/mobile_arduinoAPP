@@ -16,7 +16,7 @@ void loop()
        c = Serial.read();
     
        if(c=='t'){
-        
+       
         DataT();
 
         digitalWrite(2,HIGH);

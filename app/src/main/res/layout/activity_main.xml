@@ -10,8 +10,9 @@
     <ImageButton
         android:layout_width="545dp"
         android:layout_height="545dp"
+        android:background="#FFFFFF"
         android:onClick="onClickStart"
-        android:src="@drawable/connectNotPressed"
+        android:src="@drawable/connect_not_pressed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

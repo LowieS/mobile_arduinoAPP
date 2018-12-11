@@ -21,7 +21,7 @@
         <activity android:name=".Main2Activity" />
         <activity android:name=".Main3Activity"></activity>
         <service
-            android:name="BlueConnect"
+            android:name=".BlueServer"
             android:icon="@drawable/connection_button"
             android:label="BlueService"
             >

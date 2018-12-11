@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 348 77.15">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #09f;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-size: 30px;
+        font-family: SegoeUI-Bold, Segoe UI;
+        font-weight: 700;
+      }
+
+      .cls-4 {
+        filter: url(#Path_12);
+      }
+    </style>
+    <filter id="Path_12" x="0" y="0" width="348" height="77.15" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.459"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="led" transform="translate(-8 -95.5)">
+    <g class="cls-4" transform="matrix(1, 0, 0, 1, 8, 95.5)">
+      <path id="Path_12-2" data-name="Path 12" class="cls-1" d="M33.2,0H296.8C315.138,0,330,11.544,330,25.783v7.583c0,14.24-14.862,25.783-33.2,25.783H33.2C14.862,59.15,0,47.606,0,33.367V25.783C0,11.544,14.862,0,33.2,0Z" transform="translate(9 6)"/>
+    </g>
+    <text id="LED-2" data-name="LED" class="cls-2" transform="translate(93 110.734)"><tspan x="0" y="32">LED</tspan></text>
+    <path id="ic_brightness_medium_24px" class="cls-3" d="M31.422,23.958,36.69,18.69l-5.268-5.268V5.958H23.958L18.69.69,13.422,5.958H5.958v7.464L.69,18.69l5.268,5.268v7.464h7.464L18.69,36.69l5.268-5.268h7.464V23.958ZM18.69,28.239V9.141a9.549,9.549,0,0,1,0,19.1Z" transform="translate(34.31 110.31)"/>
+    <g id="arrow" transform="translate(2 8)">
+      <path id="ic_keyboard_arrow_right_24px" class="cls-3" d="M8.59,34.333,20.952,21.944,8.59,9.556,12.4,5.75,28.59,21.944,12.4,38.139Z" transform="translate(301.41 101.25)"/>
+    </g>
+  </g>
+</svg>

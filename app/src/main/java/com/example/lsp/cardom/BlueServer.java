@@ -10,6 +10,7 @@ import android.widget.Toast;
 public class BlueServer extends Service {
     Context Mycontext ;
     boolean check= false;
+    BlueConnect MyBlue;
 
     IBinder mBinder = new LocalBinder();
 
@@ -27,7 +28,7 @@ public class BlueServer extends Service {
 
     public boolean getShit() {
 
-        BlueConnect MyBlue = new BlueConnect(Mycontext);
+        MyBlue = new BlueConnect(Mycontext);
         if (MyBlue.BlueOn()) {
             if (MyBlue.StartConnect()) {
 

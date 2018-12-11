@@ -53,8 +53,8 @@ TextView textView;
     };
 
     @Override
-    protected void onStop() {
-        super.onStop();
+    protected void onDestroy() {
+        super.onDestroy();
         if(mBounded) {
             unbindService(mConnection);
             mBounded = false;
@@ -64,11 +64,8 @@ TextView textView;
     public void SENDT(View view) {
 
 
-        if (mServer.check) {
-            Toast.makeText(getApplicationContext(), "data overgederage", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(getApplicationContext(), "nope", Toast.LENGTH_LONG).show();
-        }
+
+        mServer.MyBlue.SendT();
 
 
     }
@@ -76,7 +73,7 @@ TextView textView;
     public void SENDF(View view) {
 
 
-
+        mServer.MyBlue.SendF();
     }
 
 

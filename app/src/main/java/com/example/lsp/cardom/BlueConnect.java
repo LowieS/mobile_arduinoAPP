@@ -178,7 +178,7 @@ public class BlueConnect implements Serializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        textView.append("\nSent Data:"+string+"\n");
+
 
     }
     public void SendF() {
@@ -189,7 +189,7 @@ public class BlueConnect implements Serializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        textView.append("\nSent Data:"+string+"\n");
+        
 
     }
 }

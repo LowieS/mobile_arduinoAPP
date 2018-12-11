@@ -20,20 +20,6 @@
         app:layout_constraintTop_toBottomOf="@+id/button6" />
 
     <Button
-        android:id="@+id/button6"
-        android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        android:layout_width="330dp"
-        android:layout_height="60dp"
-        android:background="@drawable/ic_button"
-        android:text="ADD"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
-
-    <Button
         android:id="@+id/button7"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
@@ -102,6 +88,19 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:background="@drawable/ic_button"
+        android:text="ADD"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 
 
 </android.support.constraint.ConstraintLayout>

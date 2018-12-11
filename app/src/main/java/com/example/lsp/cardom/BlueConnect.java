@@ -15,27 +15,29 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.Serializable;
 import java.util.Set;
 import java.util.UUID;
 
-public class BlueConnect {
+public class BlueConnect implements Serializable {
 
 
-    private final UUID PORT_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");//Serial Port Service ID
-    BluetoothDevice device;
-    private BluetoothSocket socket;
+    public  final UUID PORT_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");//Serial Port Service ID
+   public BluetoothDevice device;
+    public  BluetoothSocket socket;
     public OutputStream outputStream;
-    private InputStream inputStream;
-    TextView textView;
-    byte buffer[];
-    int bufferPosition;
-    boolean stopThread;
-    Context context;
+    public  InputStream inputStream;
+    public  TextView textView;
+    public  byte buffer[];
+    public  int bufferPosition;
+    public  boolean stopThread;
+    public   Context context;
 
 
-    int byteCount;
-    public BlueConnect(Context conText){
+    public int byteCount;
+    public BlueConnect(Context conText ){
         context=conText;
+
     }
 
     public boolean BlueOn(){
@@ -137,11 +139,12 @@ public class BlueConnect {
     }
 
 
-    public void ReadData() {
+    public String ReadData()  {
 
         final Handler handler = new Handler();
         stopThread = false;
         buffer = new byte[1024];
+        final String[] Input = new String[1];
         Thread thread = new Thread(new Runnable() {
             public void run() {
                 while (!Thread.currentThread().isInterrupted() && !stopThread) {
@@ -154,12 +157,7 @@ public class BlueConnect {
                             byte[] rawBytes = new byte[byteCount];
                             inputStream.read(rawBytes);
                             final String string = new String(rawBytes, "UTF-8");
-                            handler.post(new Runnable() {
-                                public void run() {
-
-                                    textView.append(string);
-                                }
-                            });
+                           Input[0] =string;
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -169,6 +167,7 @@ public class BlueConnect {
             }
         });
         thread.start();
+        return Input[0];
     }
 
     public void SendT() {

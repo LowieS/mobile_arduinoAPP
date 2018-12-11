@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main2Activity">
+    tools:context=".MenuScreen">
 
     <Button
         android:id="@+id/button5"
@@ -83,6 +83,7 @@
         android:layout_height="60dp"
         android:background="@drawable/ic_button"
         android:text="LIGHTS"
+        android:onClick="StartLights"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

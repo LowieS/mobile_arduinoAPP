@@ -7,15 +7,35 @@ import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class Main2Activity extends AppCompatActivity {
+public class MainScreen extends AppCompatActivity {
     boolean mBounded;
     BlueServer mServer;
+    TextView text;
+    Button button;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_mainscreen);
+
+        //textView = (TextView) findViewById(R.id.textView);
+
+
+    }
+
+
+    public void onClickStart(View view) {
+        mServer.Mycontext=this.getApplicationContext();
+        if (mServer.getCon()){
+            Intent intent1 = new Intent(this, MenuScreen.class);
+
+            mServer.MyBlue.Send("m");
+            startActivity(intent1);
+        }
 
 
     }
@@ -44,6 +64,7 @@ public class Main2Activity extends AppCompatActivity {
 
         }
     };
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -52,10 +73,4 @@ public class Main2Activity extends AppCompatActivity {
             mBounded = false;
         }
     };
-
-    public void StartLED(View view) {
-        mServer.MyBlue.Send("0");
-        Intent intent1 = new Intent(this,Main3Activity.class);
-        startActivity(intent1);
-    }
 }

@@ -18,6 +18,19 @@ void loop()
      {  
        c = Serial.read();
       Serial.println(c);
+      
+       if(c=='1'&&Menus=='1'){
+        
+        
+        digitalWrite(3,HIGH);
+        digitalWrite(2,LOW);
+       }
+       if(c=='2'&&Menus=='1'){
+        
+        
+        digitalWrite(2,HIGH);
+        digitalWrite(3,LOW);
+       }
 
       
        if(sub==true){
@@ -31,18 +44,7 @@ void loop()
       }
      
 
-       if(c=='f'&&Menus=='0'){
-        
-        
-        digitalWrite(3,HIGH);
-        digitalWrite(2,LOW);
-       }
-       if(c=='t'&&Menus=='0'){
-        
-        
-        digitalWrite(2,HIGH);
-        digitalWrite(3,LOW);
-       }
+      
         
      
     } 

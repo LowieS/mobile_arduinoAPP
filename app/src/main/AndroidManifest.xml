@@ -11,22 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" android:theme="@style/ConnectAppTheme">
+        <activity
+            android:name=".MainScreen"
+            android:theme="@style/ConnectAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main2Activity" />
-        <activity android:name=".Main3Activity"></activity>
+        <activity android:name=".MenuScreen" />
+        <activity android:name=".Leds" />
+
         <service
             android:name=".BlueServer"
             android:icon="@drawable/connection_button"
-            android:label="BlueService"
-            >
-        </service>
-    </application>
+            android:label="BlueService"></service>
 
+        <activity android:name=".Lights"></activity>
+    </application>
 
 </manifest>

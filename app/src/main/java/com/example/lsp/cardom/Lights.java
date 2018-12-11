@@ -7,25 +7,17 @@ import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
-public class Main3Activity extends AppCompatActivity {
+public class Lights extends AppCompatActivity {
     boolean mBounded;
     BlueServer mServer;
 
-TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
-
-
-        textView = (TextView) findViewById(R.id.textView);
-
+        setContentView(R.layout.activity_lights);
     }
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -61,20 +53,18 @@ TextView textView;
         }
     };
 
-    public void SENDT(View view) {
+    public void SEND1(View view) {
 
 
 
-        mServer.MyBlue.Send("t");
+        mServer.MyBlue.Send("1");
 
 
     }
 
-    public void SENDF(View view) {
+    public void SEND2(View view) {
 
 
-        mServer.MyBlue.Send("f");
+        mServer.MyBlue.Send("2");
     }
-
-
 }

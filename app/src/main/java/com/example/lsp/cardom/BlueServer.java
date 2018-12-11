@@ -26,7 +26,7 @@ public class BlueServer extends Service {
         }
     }
 
-    public boolean getShit() {
+    public boolean getCon() {
 
         MyBlue = new BlueConnect(Mycontext);
         if (MyBlue.BlueOn()) {

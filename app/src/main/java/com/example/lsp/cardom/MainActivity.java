@@ -44,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickStart(View view) {
         mServer.Mycontext=this.getApplicationContext();
-        if (mServer.getShit()){
+        if (mServer.getCon()){
             Intent intent1 = new Intent(this, Main2Activity.class);
 
-            // intent1.putExtra("ack1_class", myBlue);
+            mServer.MyBlue.Send("m");
             startActivity(intent1);
         }
 

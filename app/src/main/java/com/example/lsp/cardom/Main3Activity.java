@@ -65,7 +65,7 @@ TextView textView;
 
 
 
-        mServer.MyBlue.SendT();
+        mServer.MyBlue.Send("t");
 
 
     }
@@ -73,7 +73,7 @@ TextView textView;
     public void SENDF(View view) {
 
 
-        mServer.MyBlue.SendF();
+        mServer.MyBlue.Send("f");
     }
 
 

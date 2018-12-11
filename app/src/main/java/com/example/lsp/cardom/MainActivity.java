@@ -17,10 +17,11 @@ import java.io.Console;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.Serializable;
 import java.util.Set;
 import java.util.UUID;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 BlueConnect myBlue;
     @Override
 
@@ -41,6 +42,7 @@ BlueConnect myBlue;
             if (myBlue.StartConnect()) {
                 Intent intent1 = new Intent(this, Main2Activity.class);
                 Toast.makeText(getApplicationContext(), "connection", Toast.LENGTH_SHORT).show();
+               // intent1.putExtra("ack1_class", myBlue);
                 startActivity(intent1);
             }
         }

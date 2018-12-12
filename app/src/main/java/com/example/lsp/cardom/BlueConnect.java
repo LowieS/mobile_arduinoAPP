@@ -170,26 +170,16 @@ public class BlueConnect implements Serializable {
         return Input[0];
     }
 
-    public void SendT() {
-        String string = "t";
+    public void Send(String in) {
+        String string = in;
         string.concat("\n");
         try {
             outputStream.write(string.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
-        textView.append("\nSent Data:"+string+"\n");
+
 
     }
-    public void SendF() {
-        String string = "f";
-        string.concat("\n");
-        try {
-            outputStream.write(string.getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        textView.append("\nSent Data:"+string+"\n");
 
-    }
 }

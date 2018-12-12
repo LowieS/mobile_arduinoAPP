@@ -63,6 +63,7 @@ void loop()
 } 
 
 void UltraSon(){
+ 
     digitalWrite(trigPin, LOW);
   delayMicroseconds(5);
   digitalWrite(trigPin, HIGH);
@@ -81,4 +82,5 @@ void UltraSon(){
  
   Serial.println(cm);
   delay(500);
+ 
 }

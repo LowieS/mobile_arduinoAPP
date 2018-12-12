@@ -28,7 +28,7 @@ public class BlueConnect implements Serializable {
     public OutputStream outputStream;
     public  InputStream inputStream;
     public  TextView textView;
-    public  byte buffer[];
+
     public  int bufferPosition;
     public  boolean stopThread;
     public   Context context;
@@ -139,36 +139,37 @@ public class BlueConnect implements Serializable {
     }
 
 
-    public String ReadData()  {
+    public void ReadData(TextView textView) {
 
-        final Handler handler = new Handler();
-        stopThread = false;
-        buffer = new byte[1024];
-        final String[] Input = new String[1];
-        Thread thread = new Thread(new Runnable() {
-            public void run() {
-                while (!Thread.currentThread().isInterrupted() && !stopThread) {
 
-                    try {
-                        int byteCount = inputStream.available();
 
-                        if (byteCount > 0) {
+        final String string;
 
-                            byte[] rawBytes = new byte[byteCount];
-                            inputStream.read(rawBytes);
-                            final String string = new String(rawBytes, "UTF-8");
-                           Input[0] =string;
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                        stopThread=true;
-                    }
-                }
+
+        try {
+            int byteCount = inputStream.available();
+
+            if (byteCount > 0) {
+
+
+                byte[] rawBytes = new byte[byteCount];
+                inputStream.read(rawBytes);
+                 string = new String(rawBytes, "UTF-8");
+                 textView.setText("distance:"+string);
+
+
             }
-        });
-        thread.start();
-        return Input[0];
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+
+        }
+
+
+
     }
+
 
     public void Send(String in) {
         String string = in;

@@ -1,5 +1,6 @@
 package com.example.lsp.cardom;
 
+import android.bluetooth.BluetoothAdapter;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
@@ -30,11 +31,18 @@ public class MainScreen extends AppCompatActivity {
 
     public void onClickStart(View view) {
         mServer.Mycontext=this.getApplicationContext();
-        if (mServer.getCon()){
-            Intent intent1 = new Intent(this, MenuScreen.class);
+        if(mServer.BlueCon()) {
+            if (mServer.getCon()) {
+                Intent intent1 = new Intent(this, MenuScreen.class);
 
-            mServer.MyBlue.Send("m");
-            startActivity(intent1);
+                mServer.MyBlue.Send("m");
+                startActivity(intent1);
+            }
+        }
+        else {
+            Intent enableAdapter = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+
+            startActivityForResult(enableAdapter, 0);
         }
 
 

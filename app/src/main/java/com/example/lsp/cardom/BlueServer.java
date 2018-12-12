@@ -1,6 +1,7 @@
 package com.example.lsp.cardom;
 
 import android.app.Service;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Binder;
@@ -25,18 +26,28 @@ public class BlueServer extends Service {
             return BlueServer.this;
         }
     }
+    public  boolean BlueCon() {
+        boolean check2=false;
+        MyBlue = new BlueConnect(Mycontext);
+        if (MyBlue.BlueOn()) {
+            check2=true;
+        }
+        return check2;
+    }
+
 
     public boolean getCon() {
 
-        MyBlue = new BlueConnect(Mycontext);
-        if (MyBlue.BlueOn()) {
+
+
             if (MyBlue.StartConnect()) {
 
                 Toast.makeText(getApplicationContext(), "connection", Toast.LENGTH_SHORT).show();
                 // intent1.putExtra("ack1_class", myBlue);
                 check=true;
             }
-        }
+
+
         return check;
     }
 }

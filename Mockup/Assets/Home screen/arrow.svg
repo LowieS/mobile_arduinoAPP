@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 32.389">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="arrow" transform="translate(-310 -107)">
+    <path id="ic_keyboard_arrow_right_24px" class="cls-1" d="M8.59,34.333,20.952,21.944,8.59,9.556,12.4,5.75,28.59,21.944,12.4,38.139Z" transform="translate(301.41 101.25)"/>
+  </g>
+</svg>

@@ -19,11 +19,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="height" value="77" />
-                            <entry key="outputName" value="ic_button" />
+                            <entry key="height" value="36" />
+                            <entry key="outputName" value="ic_volume_up_24px" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\michi\OneDrive\Documents\GitHub\mobile_arduinoAPP\Mockup\Assets\Home screen\button.svg" />
-                            <entry key="width" value="348" />
+                            <entry key="sourceFile" value="C:\Users\michi\OneDrive\Documents\GitHub\mobile_arduinoAPP\Mockup\Assets\Home screen\ic_volume_up_24px.svg" />
+                            <entry key="width" value="36" />
                           </map>
                         </option>
                       </PersistentState>

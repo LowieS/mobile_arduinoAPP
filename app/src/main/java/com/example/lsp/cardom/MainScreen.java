@@ -23,7 +23,7 @@ public class MainScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainscreen);
 
-        //textView = (TextView) findViewById(R.id.textView);
+
 
 
     }

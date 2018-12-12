@@ -7,18 +7,23 @@ import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class MenuScreen extends AppCompatActivity {
+public class Safety extends AppCompatActivity {
     boolean mBounded;
     BlueServer mServer;
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menuscreen);
+        setContentView(R.layout.activity_safety);
+        textView=(TextView) findViewById(R.id.textview);
+
 
 
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -53,21 +58,9 @@ public class MenuScreen extends AppCompatActivity {
         }
     };
 
-    public void StartLED(View view) {
-        mServer.MyBlue.Send("0");
-        Intent intent1 = new Intent(this,Leds.class);
-        startActivity(intent1);
+    public void GetData(View view) {
+        textView.append(mServer.MyBlue.ReadData());
     }
 
-    public void StartLights(View view) {
-        mServer.MyBlue.Send("1");
-        Intent intent1 = new Intent(this,Lights.class);
-        startActivity(intent1);
-    }
 
-    public void StartSafety(View view) {
-        mServer.MyBlue.Send("4");
-        Intent intent1 = new Intent(this,Safety.class);
-        startActivity(intent1);
-    }
 }

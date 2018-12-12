@@ -26,9 +26,10 @@
         <service
             android:name=".BlueServer"
             android:icon="@drawable/connection_button"
-            android:label="BlueService"></service>
+            android:label="BlueService" />
 
-        <activity android:name=".Lights"></activity>
+        <activity android:name=".Lights" />
+        <activity android:name=".Safety"></activity>
     </application>
 
 </manifest>

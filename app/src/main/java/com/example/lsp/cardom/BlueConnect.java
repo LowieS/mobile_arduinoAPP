@@ -138,7 +138,7 @@ public class BlueConnect implements Serializable {
 
     }
 
-
+//string.split("\r\n")
     public void ReadData(TextView textView) {
 
 

@@ -80,7 +80,7 @@ void UltraSon(){
   cm = (duration/2) / 29.1;     // Divide by 29.1 or multiply by 0.0343
 
  
-  Serial.println(cm);
+  Serial.print(cm);
   delay(500);
  
 }

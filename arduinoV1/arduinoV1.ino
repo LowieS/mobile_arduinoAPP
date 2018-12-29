@@ -7,6 +7,8 @@ int trigPin = 8;    // Trigger
 int echoPin = 7;    // Echo
 int duration, cm;
 
+int count=0;
+
 void setup()  
 {  
   Serial.begin(9600);   
@@ -20,16 +22,17 @@ void setup()
   
 void loop()  
 {   
-  if(Menus=='4'){
-  
-     UltraSon();
-  }
+
   
      if (Serial.available())  
      {  
        c = Serial.read();
       Serial.println(c);
       
+      if(Menus=='4'&&c=='u'){
+  
+           UltraSon();
+        }
        if(c=='1'&&Menus=='1'){
         
         
@@ -63,6 +66,8 @@ void loop()
 } 
 
 void UltraSon(){
+ 
+  
  
     digitalWrite(trigPin, LOW);
   delayMicroseconds(5);

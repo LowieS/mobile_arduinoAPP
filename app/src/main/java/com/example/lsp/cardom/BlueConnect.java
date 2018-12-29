@@ -8,10 +8,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.Console;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -32,6 +34,10 @@ public class BlueConnect implements Serializable {
     public  int bufferPosition;
     public  boolean stopThread;
     public   Context context;
+    public String[] stringArray_split;
+    public String[] stringArray=new String[10];
+    int count=0;
+    int data=0;
 
 
     public int byteCount;
@@ -146,16 +152,41 @@ public class BlueConnect implements Serializable {
         final String string;
 
 
+
         try {
             int byteCount = inputStream.available();
 
             if (byteCount > 0) {
-
-
                 byte[] rawBytes = new byte[byteCount];
                 inputStream.read(rawBytes);
-                 string = new String(rawBytes, "UTF-8");
-                 textView.setText("distance:"+string);
+                string = new String(rawBytes, "UTF-8");
+                stringArray_split=string.split("u");
+                if (stringArray_split.length>0) {
+
+
+                    textView.setText("distance:" + stringArray_split[0]);
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             }

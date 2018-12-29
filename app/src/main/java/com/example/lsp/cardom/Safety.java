@@ -3,6 +3,7 @@ package com.example.lsp.cardom;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.graphics.Color;
 import android.os.Handler;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
@@ -70,11 +71,18 @@ public class Safety extends AppCompatActivity {
         final Handler handler = new Handler();
 
         buffer = new byte[1024];
+
+
         Thread thread = new Thread(new Runnable() {
             public void run() {
                 while (!Thread.currentThread().isInterrupted()) {
+                   
+                    mServer.MyBlue.Send("u");
+
 
                     mServer.MyBlue.ReadData(textView);
+
+
                 }
             }
 

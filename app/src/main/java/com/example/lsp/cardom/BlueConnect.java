@@ -36,7 +36,7 @@ public class BlueConnect implements Serializable {
     public   Context context;
     public String[] stringArray_split;
     public String[] stringArray=new String[10];
-    int count=0;
+    String writeData;
     int data=0;
 
 
@@ -164,29 +164,21 @@ public class BlueConnect implements Serializable {
                 if (stringArray_split.length>0) {
 
 
-                    textView.setText("distance:" + stringArray_split[0]);
+
+                    if (stringArray_split[0]!="") {
+                        writeData=stringArray_split[0].replace("\r\n", "");
+
+                        try {
+                            data=Integer.parseInt(writeData) ;
+                            textView.setText("distance:" +data );
+
+                        }catch (java.lang.NumberFormatException e){
+                            e.printStackTrace();
+                        }
+
+
+                    }
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             }
@@ -213,5 +205,9 @@ public class BlueConnect implements Serializable {
 
 
     }
+
+
+
+
 
 }

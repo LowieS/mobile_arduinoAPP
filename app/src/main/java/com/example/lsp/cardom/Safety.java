@@ -76,7 +76,7 @@ public class Safety extends AppCompatActivity {
         Thread thread = new Thread(new Runnable() {
             public void run() {
                 while (!Thread.currentThread().isInterrupted()) {
-                   
+
                     mServer.MyBlue.Send("u");
 
 

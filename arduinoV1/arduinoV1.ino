@@ -1,4 +1,6 @@
+#include <SoftwareSerial.h>
 
+SoftwareSerial Bluetooth(0,1); 
 
 char c;
 char Menus;
@@ -39,8 +41,10 @@ void loop()
      if (Serial.available())  
      {  
       if(LED){
+        value = Serial.read()-48;
  
-       value = Serial.read()-48;
+      // Bluetooth.readBytes((char*)&value, sizeof(value));
+       //Serial.println(value);
         
       count++;
      if(count==1){
@@ -72,9 +76,7 @@ void loop()
         }
         count=0;
         RGB=0;
-        Serial.println(R);
-        Serial.println(G);
-        Serial.println(B);
+        
         analogWrite(9,R);
         analogWrite(10,G);
         analogWrite(11,B);

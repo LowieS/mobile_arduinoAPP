@@ -24,6 +24,10 @@ void setup()
   pinMode(3,OUTPUT);  
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
+  pinMode(9,OUTPUT); 
+  pinMode(10,OUTPUT);
+  pinMode(11,OUTPUT); 
+  
   
  
 }  
@@ -35,9 +39,9 @@ void loop()
      if (Serial.available())  
      {  
       if(LED){
+ 
+       value = Serial.read()-48;
         
-     value = Serial.read()-48;
-      
       count++;
      if(count==1){
         RGB+=value*1000;
@@ -50,30 +54,38 @@ void loop()
       }
        if(count==4){
         RGB+=value;
+         
+          
         RGB_final=RGB;
-        if(RGB_final>=0&&RGB_final<1000){
+        if(RGB_final>=0&&RGB_final<256){
           R=RGB_final;
         }
-        if(RGB_final>=1000&&RGB_final<2000){
+        if(RGB_final>=1000&&RGB_final<1256){
           G=RGB_final-1000;
         }
-        if(RGB_final>=2000&&RGB_final<3000){
+        if(RGB_final>=2000&&RGB_final<2256){
           B=RGB_final-2000;
+        }
+        if(RGB_final==256){
+          LED=false;
+          c='m';
         }
         count=0;
         RGB=0;
         Serial.println(R);
         Serial.println(G);
         Serial.println(B);
-        
+        analogWrite(9,R);
+        analogWrite(10,G);
+        analogWrite(11,B);
+     
       }
-    
-      }
-
+    }
+ 
       else{
        c = Serial.read();
        
-     Serial.println(c);
+       Serial.println(c);
        
       
       if(Menus=='4'&&c=='u'){
@@ -100,12 +112,15 @@ void loop()
 
         Menus=c;
         sub = false;
+        
+        if(Menus=='0'){
+           LED=true;
+        }
       }
-     if(c=='0'){
-      LED=true;
-     }
+     
       if(c=='m'){
         sub=true;
+        Menus=0;
       }
      
 

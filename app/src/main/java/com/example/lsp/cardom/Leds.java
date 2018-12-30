@@ -107,7 +107,10 @@ TextView textView;
 
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
-            if (seekBar.getProgress()<100){
+            if (seekBar.getProgress()<10){
+                mServer.MyBlue.Send("0"+"0"+"0"+seekBar.getProgress());
+            }
+            else if (seekBar.getProgress()<100){
                 mServer.MyBlue.Send("0"+"0"+seekBar.getProgress());
             }
             else {
@@ -134,7 +137,10 @@ TextView textView;
 
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
-            if (seekBar.getProgress()<100){
+            if (seekBar.getProgress()<10){
+                mServer.MyBlue.Send("1"+"0"+"0"+seekBar.getProgress());
+            }
+            else if (seekBar.getProgress()<100){
                 mServer.MyBlue.Send("1"+"0"+seekBar.getProgress());
             }
             else {
@@ -160,7 +166,10 @@ TextView textView;
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
             // called after the user finishes moving the SeekBar
-            if (seekBar.getProgress()<100){
+            if (seekBar.getProgress()<10){
+                mServer.MyBlue.Send("2"+"0"+ "0"+seekBar.getProgress());
+            }
+            else if (seekBar.getProgress()<100){
                 mServer.MyBlue.Send("2"+"0"+seekBar.getProgress());
             }
             else {
@@ -170,6 +179,14 @@ TextView textView;
 
 
     };
+
+
+    public void PrevMenu(View view) {
+        Intent intent1 = new Intent(this, MenuScreen.class);
+
+        mServer.MyBlue.Send("0256");
+        startActivity(intent1);
+    }
 
 
 }

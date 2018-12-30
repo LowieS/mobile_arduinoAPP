@@ -18,6 +18,8 @@ public class Safety extends AppCompatActivity {
     TextView textView;
     public  byte buffer[];
     boolean readUltra = false;
+    Thread thread;
+    boolean flag =false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,24 +71,39 @@ public class Safety extends AppCompatActivity {
 
     public void GetData(View view) {
         final Handler handler = new Handler();
+        flag=true;
 
         buffer = new byte[1024];
 
 
-        Thread thread = new Thread(new Runnable() {
+         thread = new Thread(new Runnable() {
             public void run() {
-                while (!Thread.currentThread().isInterrupted()) {
+                while (!(Thread.currentThread().isInterrupted())) {
+                    if (flag) {
 
-                    mServer.MyBlue.Send("u");
 
 
-                    mServer.MyBlue.ReadData(textView);
 
+                        mServer.MyBlue.Send("u");
+
+
+                        mServer.MyBlue.ReadData(textView);
+                    }
 
                 }
             }
 
         });
         thread.start();
+    }
+
+    public void PrevMenu(View view) {
+        flag=false;
+        Intent intent1 = new Intent(this, MenuScreen.class);
+
+
+        mServer.MyBlue.Send("m");
+
+        startActivity(intent1);
     }
 }

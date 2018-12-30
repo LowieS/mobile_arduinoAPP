@@ -160,20 +160,36 @@ public class BlueConnect implements Serializable {
                 byte[] rawBytes = new byte[byteCount];
                 inputStream.read(rawBytes);
                 string = new String(rawBytes, "UTF-8");
-                stringArray_split=string.split("u");
+                stringArray_split=string.split(",");
                 if (stringArray_split.length>0) {
 
 
 
                     if (stringArray_split[0]!="") {
-                        writeData=stringArray_split[0].replace("\r\n", "");
 
-                        try {
-                            data=Integer.parseInt(writeData) ;
-                            textView.setText("distance:" +data );
+                        stringArray_split[0]=stringArray_split[0].replace("m\r\n4\r\n", "");
 
-                        }catch (java.lang.NumberFormatException e){
-                            e.printStackTrace();
+                        stringArray_split[0]=stringArray_split[0].replace("u\r\n", "");
+                        stringArray_split[0]=stringArray_split[0].replace("u", "");
+                        stringArray_split[0]=stringArray_split[0].replace("m", "");
+                        stringArray_split[0]=stringArray_split[0].replace(" ", "");
+                        stringArray_split[0]=stringArray_split[0].replace("\r\n", "");
+                        writeData=stringArray_split[0];
+
+
+
+
+                        if (writeData!="") {
+
+                            try {
+                                data = Integer.parseInt(writeData);
+                                textView.setText("distance:" + data);
+                            }catch (java.lang.NumberFormatException e){
+                                e.printStackTrace();
+                            }
+
+
+
                         }
 
 

@@ -63,29 +63,18 @@ void loop()
         count=0;
         RGB=0;
         Serial.println(R);
-          Serial.println(G);
-            Serial.println(B);
+        Serial.println(G);
+        Serial.println(B);
         
       }
-        
-      
-      
-      
-      
+    
       }
 
-
-
-
-
-
-
-
-
-      
       else{
        c = Serial.read();
-      Serial.println(c);
+       
+     Serial.println(c);
+       
       
       if(Menus=='4'&&c=='u'){
   
@@ -147,6 +136,9 @@ void UltraSon(){
 
  
   Serial.print(cm);
+  Serial.print(',');
+    
+  
   delay(300);
  
 }

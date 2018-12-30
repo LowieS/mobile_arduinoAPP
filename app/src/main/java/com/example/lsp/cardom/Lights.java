@@ -67,4 +67,11 @@ public class Lights extends AppCompatActivity {
 
         mServer.MyBlue.Send("2");
     }
+
+    public void PrevMenu(View view) {
+        Intent intent1 = new Intent(this, MenuScreen.class);
+
+        mServer.MyBlue.Send("m");
+        startActivity(intent1);
+    }
 }

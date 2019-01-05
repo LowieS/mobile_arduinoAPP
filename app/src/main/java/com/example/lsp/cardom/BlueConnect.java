@@ -179,7 +179,7 @@ public class BlueConnect implements Serializable {
 
 
 
-                        if (writeData!="") {
+                        if (!(writeData.equals(""))) {
 
                             try {
                                 data = Integer.parseInt(writeData);

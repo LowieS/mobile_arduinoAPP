@@ -9,6 +9,7 @@ import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +17,7 @@ public class Safety extends AppCompatActivity {
     boolean mBounded;
     BlueServer mServer;
     TextView textView;
+    ImageView imageView;
     public  byte buffer[];
     boolean readUltra = false;
     Thread thread;
@@ -26,6 +28,7 @@ public class Safety extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_safety);
         textView = (TextView) findViewById(R.id.textview);
+        imageView = (ImageView) findViewById(R.id.imageView);
 
 
     }
@@ -88,6 +91,9 @@ public class Safety extends AppCompatActivity {
 
 
                         mServer.MyBlue.ReadData(textView);
+                        if (mServer.MyBlue.data<300){
+                            //imageView.setImageDrawable();
+                        }
                     }
 
                 }
@@ -104,6 +110,9 @@ public class Safety extends AppCompatActivity {
 
         mServer.MyBlue.Send("m");
 
+
         startActivity(intent1);
+
+
     }
 }

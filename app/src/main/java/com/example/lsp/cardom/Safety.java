@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Safety extends AppCompatActivity {
+
     boolean mBounded;
     BlueServer mServer;
     TextView textView;
@@ -25,6 +26,7 @@ public class Safety extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_safety);
         textView = (TextView) findViewById(R.id.textview);

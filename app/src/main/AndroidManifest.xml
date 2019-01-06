@@ -21,15 +21,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuScreen" android:label="MAIN MENU"/>
-        <activity android:name=".Leds" android:label="LED"/>
+        <activity android:name=".Leds" android:label="LED" android:parentActivityName=".MenuScreen"/>
 
         <service
             android:name=".BlueServer"
             android:icon="@drawable/connection_button"
             android:label="BlueService" />
 
-        <activity android:name=".Lights" android:label="LIGHTS" />
-        <activity android:name=".Safety" android:label="PARKING"></activity>
+        <activity android:name=".Lights" android:label="LIGHTS" android:parentActivityName=".MenuScreen"/>
+        <activity android:name=".Safety" android:label="PARKING" android:parentActivityName=".MenuScreen"></activity>
     </application>
 
 </manifest>

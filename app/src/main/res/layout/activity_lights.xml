@@ -5,25 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Lights">
+
     <Button
         android:id="@+id/button8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="64dp"
-        android:text="Light 1"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="112dp"
+        android:background="@drawable/lights_disabled"
         android:onClick="SEND1"
+        android:text="GROOTLICHT"
+        android:textColor="#CBCBCB"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="76dp"
-        android:text="Light 2"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="112dp"
+        android:background="@drawable/lights_disabled"
         android:onClick="SEND2"
+        android:text="DIMLICHT"
+        android:textColor="#CBCBCB"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button8" />
 

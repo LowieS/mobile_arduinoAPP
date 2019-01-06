@@ -93,8 +93,42 @@ public class Safety extends AppCompatActivity {
 
 
                         mServer.MyBlue.ReadData(textView);
-                        if (mServer.MyBlue.data<300){
+                        if (mServer.MyBlue.data<=150){
                             //imageView.setImageDrawable();
+                            ImageView imageView = (ImageView)findViewById(R.id.imageView);
+                            imageView.setImageResource(R.drawable.ic_p_green);
+
+                            ImageView imageView1 = (ImageView)findViewById(R.id.imageView2);
+                            imageView1.setImageResource(R.drawable.ic_p_orange_empty);
+
+                            ImageView imageView2 = (ImageView)findViewById(R.id.imageView3);
+                            imageView2.setImageResource(R.drawable.ic_p_red_empty);
+
+                            textView.setTextColor(Color.parseColor("#00FF1A"));
+                        }
+                        else if(mServer.MyBlue.data<=50 && mServer.MyBlue.data>150){
+                            ImageView imageView = (ImageView)findViewById(R.id.imageView);
+                            imageView.setImageResource(R.drawable.ic_p_green_empty);
+
+                            ImageView imageView1 = (ImageView)findViewById(R.id.imageView2);
+                            imageView1.setImageResource(R.drawable.ic_p_orange);
+
+                            ImageView imageView2 = (ImageView)findViewById(R.id.imageView3);
+                            imageView2.setImageResource(R.drawable.ic_p_red_empty);
+
+                            textView.setTextColor(Color.parseColor("#FFB300"));
+                        }
+                        else if(mServer.MyBlue.data>50){
+                            ImageView imageView = (ImageView)findViewById(R.id.imageView);
+                            imageView.setImageResource(R.drawable.ic_p_green_empty);
+
+                            ImageView imageView1 = (ImageView)findViewById(R.id.imageView2);
+                            imageView1.setImageResource(R.drawable.ic_p_orange_empty);
+
+                            ImageView imageView2 = (ImageView)findViewById(R.id.imageView3);
+                            imageView2.setImageResource(R.drawable.ic_p_red);
+
+                            textView.setTextColor(Color.parseColor("#FF0000"));
                         }
                     }
 

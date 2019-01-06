@@ -35,7 +35,7 @@ public class MainScreen extends AppCompatActivity {
             if (mServer.getCon()) {
                 Intent intent1 = new Intent(this, MenuScreen.class);
 
-                mServer.MyBlue.Send("m");
+                //mServer.MyBlue.Send("m");
                 startActivity(intent1);
             }
         }

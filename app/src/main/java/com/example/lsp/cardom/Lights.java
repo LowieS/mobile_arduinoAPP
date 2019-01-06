@@ -77,12 +77,12 @@ public class Lights extends AppCompatActivity {
 
     public void SEND2(View view) {
         DIMLICHT = !DIMLICHT;
-        Button DIMLICHTbut = findViewById(R.id.button8);
+        Button DIMLICHTbut = findViewById(R.id.button9);
         if(DIMLICHT == true){
             DIMLICHTbut.setBackgroundResource(R.drawable.lights_enabled);
             DIMLICHTbut.setTextColor(Color.parseColor("#0000FF"));
         }
-        else if(GROOTLICHT == false){
+        else if(DIMLICHT == false){
             DIMLICHTbut.setBackgroundResource(R.drawable.lights_disabled);
             DIMLICHTbut.setTextColor(Color.parseColor("#CBCBCB"));
         }

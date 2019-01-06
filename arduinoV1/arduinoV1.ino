@@ -6,6 +6,8 @@ char c;
 char Menus;
 bool sub=false;
 bool LED=false;
+bool lamp1=false;
+bool lamp2=false;
 int trigPin = 8;    // Trigger
 int echoPin = 7;    // Echo
 int duration, cm;
@@ -42,9 +44,13 @@ void loop()
      {  
       if(LED){
         value = Serial.read()-48;
+          if(value==61){
+          LED=false;
+          c='m';
+        }
  
       // Bluetooth.readBytes((char*)&value, sizeof(value));
-       //Serial.println(value);
+      
         
       count++;
      if(count==1){
@@ -70,10 +76,7 @@ void loop()
         if(RGB_final>=2000&&RGB_final<2256){
           B=RGB_final-2000;
         }
-        if(RGB_final==256){
-          LED=false;
-          c='m';
-        }
+      
         count=0;
         RGB=0;
         
@@ -96,15 +99,27 @@ void loop()
         }
        if(c=='1'&&Menus=='1'){
         
+        if(lamp1==false){
+          digitalWrite(3,HIGH);
+          lamp1=true;
+        }
+        else{
+          digitalWrite(3,LOW);
+          lamp1=false;
+        }
         
-        digitalWrite(3,HIGH);
-        digitalWrite(2,LOW);
+        
        }
        if(c=='2'&&Menus=='1'){
         
-        
-        digitalWrite(2,HIGH);
-        digitalWrite(3,LOW);
+        if(lamp2==false){
+          digitalWrite(2,HIGH);
+          lamp2=true;
+        }
+        else{
+          digitalWrite(2,LOW);
+          lamp2=false;
+        }
        }
       }
       

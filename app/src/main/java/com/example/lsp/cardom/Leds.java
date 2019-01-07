@@ -192,6 +192,23 @@ public class Leds extends AppCompatActivity {
 
     };
 
+    public void Sendcolor(int R,int G , int B){
+        mServer.R_waarde=R;
+        mServer.B_waarde=B;
+        mServer.G_waarde=G;
+        SetProgress();
+       // mServer.MyBlue.Send("0");
+
+
+    }
+
+    public void SetProgress(){
+        seekBar_R.setProgress(mServer.R_waarde);
+        seekBar_G.setProgress(mServer.G_waarde);
+        seekBar_B.setProgress(mServer.B_waarde);
+
+    }
+
 
 
 

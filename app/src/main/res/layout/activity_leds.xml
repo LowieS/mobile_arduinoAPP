@@ -15,6 +15,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
         android:text="@string/basic"
+        android:onClick="basicled"
         android:textColor="#0000FF"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/button12"
@@ -44,6 +45,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="0"
+        android:onClick="advancedled"
         android:textColor="#0000FF"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -68,6 +70,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        android:id="@+id/textViewLetR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -81,7 +84,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewLetB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -95,7 +98,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewLetG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -265,6 +268,18 @@
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/pinkBut"
         app:layout_constraintTop_toBottomOf="@+id/redBut" />
+
+    <TextView
+        android:id="@+id/textViewColors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="112dp"
+        android:text="COLORS"
+        android:textColor="#0000FF"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button11" />
 
     <!--
     <Button

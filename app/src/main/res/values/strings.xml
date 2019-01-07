@@ -15,4 +15,7 @@
     <string name="addmenu">\t\t\t\t\ADD</string>
     <string name="advancedled">ADVANCED</string>
     <string name="basic">BASIC</string>
+    <string name="help">HELP</string>
+    <string name="help_info">Go to your phone settings.\n ->Bluetooth settings\n ->Connect with"MyCar"</string>
+    <string name="ok_got_it_but">OK, GOT IT!</string>
 </resources>

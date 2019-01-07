@@ -4,11 +4,13 @@ import android.app.ActionBar;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.graphics.Color;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +24,21 @@ public class Leds extends AppCompatActivity {
     SeekBar seekBar_R;
     SeekBar seekBar_G;
     SeekBar seekBar_B;
-
+    boolean basicmenu;
+    Button aquaBut;
+    Button blueBut;
+    Button greenBut;
+    Button orangeBut;
+    Button pinkBut;
+    Button redBut;
+    Button violetBut;
+    Button yellowBut;
+    TextView textViewLetR;
+    TextView textViewLetG;
+    TextView textViewLetB;
+    Button button11;
+    Button button12;
+    TextView textViewColors;
 
 
     TextView textView;
@@ -30,6 +46,24 @@ public class Leds extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leds);
+
+        aquaBut = findViewById(R.id.aquaBut);
+        blueBut = findViewById(R.id.blueBut);
+        orangeBut = findViewById(R.id.orangeBut);
+        greenBut = findViewById(R.id.greenBut);
+        pinkBut = findViewById(R.id.pinkBut);
+        redBut = findViewById(R.id.redBut);
+        violetBut = findViewById(R.id.violetBut);
+        yellowBut = findViewById(R.id.yellowBut);
+
+        textViewLetB = findViewById(R.id.textViewLetB);
+        textViewLetG = findViewById(R.id.textViewLetG);
+        textViewLetR = findViewById(R.id.textViewLetR);
+
+        textViewColors = findViewById(R.id.textViewColors);
+
+        button11 = findViewById(R.id.button11);
+        button12 = findViewById(R.id.button12);
 
          seekBar_R = findViewById(R.id.seekBar_R);
         seekBar_R.setOnSeekBarChangeListener(seekBarChangeListener_R);
@@ -210,7 +244,63 @@ public class Leds extends AppCompatActivity {
     }
 
 
+    public void basicled(View view) {
+        basicmenu = true;
+        button11.setTextColor(Color.parseColor("#0000FF"));
+        button12.setTextColor(Color.parseColor("#CBCBCB"));
+
+        textViewColors.setVisibility(View.VISIBLE);
+
+        aquaBut.setVisibility(View.VISIBLE);        //R=0 G=255 B=255
+        blueBut.setVisibility(View.VISIBLE);        //R=0 G=0 B=255
+        orangeBut.setVisibility(View.VISIBLE);      //R=255 G=136 B=0
+        greenBut.setVisibility(View.VISIBLE);       //R=0 G=255 B=0
+        pinkBut.setVisibility(View.VISIBLE);        //R=255 G=0 B=238
+        redBut.setVisibility(View.VISIBLE);         //R= 255 G=0 B=0
+        violetBut.setVisibility(View.VISIBLE);      //R=185 G=0 B=142
+        yellowBut.setVisibility(View.VISIBLE);      //R=255 G=255 B=0
+
+        text_B.setVisibility(View.GONE);
+        text_G.setVisibility(View.GONE);
+        text_B.setVisibility(View.GONE);
+
+        seekBar_B.setVisibility(View.GONE);
+        seekBar_G.setVisibility(View.GONE);
+        seekBar_R.setVisibility(View.GONE);
+
+        textViewLetR.setVisibility(View.GONE);
+        textViewLetG.setVisibility(View.GONE);
+        textViewLetB.setVisibility(View.GONE);
+    }
 
 
+    public void advancedled(View view) {
+        basicmenu = false;
 
+        button11.setTextColor(Color.parseColor("#CBCBCB"));
+        button12.setTextColor(Color.parseColor("#0000F"));
+
+        textViewColors.setVisibility(View.GONE);
+
+        aquaBut.setVisibility(View.GONE);
+        blueBut.setVisibility(View.GONE);
+        orangeBut.setVisibility(View.GONE);
+        greenBut.setVisibility(View.GONE);
+        pinkBut.setVisibility(View.GONE);
+        redBut.setVisibility(View.GONE);
+        violetBut.setVisibility(View.GONE);
+        yellowBut.setVisibility(View.GONE);
+
+        text_B.setVisibility(View.VISIBLE);
+        text_G.setVisibility(View.VISIBLE);
+        text_B.setVisibility(View.VISIBLE);
+
+        seekBar_B.setVisibility(View.VISIBLE);
+        seekBar_G.setVisibility(View.VISIBLE);
+        seekBar_R.setVisibility(View.VISIBLE);
+
+        textViewLetR.setVisibility(View.VISIBLE);
+        textViewLetG.setVisibility(View.VISIBLE);
+        textViewLetB.setVisibility(View.VISIBLE);
+    }
 }

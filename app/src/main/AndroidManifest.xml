@@ -16,19 +16,36 @@
             android:theme="@style/ConnectAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuScreen" android:label="@string/main_menu"/>
-        <activity android:name=".Leds" android:label="@string/led" android:parentActivityName=".MenuScreen"/>
+        <activity
+            android:name=".MenuScreen"
+            android:label="@string/main_menu" />
+        <activity
+            android:name=".Leds"
+            android:label="@string/led"
+            android:parentActivityName=".MenuScreen" />
 
         <service
             android:name=".BlueServer"
             android:icon="@drawable/connection_button"
             android:label="BlueService" />
 
-        <activity android:name=".Lights" android:label="@string/lights" android:parentActivityName=".MenuScreen"/>
-        <activity android:name=".Safety" android:label="@string/parking" android:parentActivityName=".MenuScreen"></activity>
+        <activity
+            android:name=".Lights"
+            android:label="@string/lights"
+            android:parentActivityName=".MenuScreen" />
+        <activity
+            android:name=".Safety"
+            android:label="@string/parking"
+            android:parentActivityName=".MenuScreen" />
+        <activity
+            android:name=".Help"
+            android:label="Help"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
     </application>
 
 </manifest>

@@ -222,14 +222,14 @@ public class Leds extends AppCompatActivity {
     public void basicled(View view) {
         basicmenu = true;
 
-        aquaBut.setVisibility(View.VISIBLE);
-        blueBut.setVisibility(View.VISIBLE);
-        orangeBut.setVisibility(View.VISIBLE);
-        greenBut.setVisibility(View.VISIBLE);
-        pinkBut.setVisibility(View.VISIBLE);
-        redBut.setVisibility(View.VISIBLE);
-        violetBut.setVisibility(View.VISIBLE);
-        yellowBut.setVisibility(View.VISIBLE);
+        aquaBut.setVisibility(View.VISIBLE);        //R=0 G=255 B=255
+        blueBut.setVisibility(View.VISIBLE);        //R=0 G=0 B=255
+        orangeBut.setVisibility(View.VISIBLE);      //R=255 G=136 B=0
+        greenBut.setVisibility(View.VISIBLE);       //R=0 G=255 B=0
+        pinkBut.setVisibility(View.VISIBLE);        //R=255 G=0 B=238
+        redBut.setVisibility(View.VISIBLE);         //R= 255 G=0 B=0
+        violetBut.setVisibility(View.VISIBLE);      //R=185 G=0 B=142
+        yellowBut.setVisibility(View.VISIBLE);      //R=255 G=255 B=0
 
         text_B.setVisibility(View.GONE);
         text_G.setVisibility(View.GONE);

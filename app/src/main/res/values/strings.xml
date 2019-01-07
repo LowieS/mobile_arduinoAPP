@@ -13,4 +13,6 @@
     <string name="parkingmenu">P\t\t\t\t\t\t\PARKING</string>
     <string name="safetymenu">\t\t\t\t\SAFETY</string>
     <string name="addmenu">\t\t\t\t\ADD</string>
+    <string name="advancedled">ADVANCED</string>
+    <string name="basic">BASIC</string>
 </resources>

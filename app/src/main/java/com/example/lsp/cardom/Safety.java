@@ -76,7 +76,12 @@ public class Safety extends AppCompatActivity {
         if (mBounded) {
             unbindService(mConnection);
             mBounded = false;
-            thread.interrupt();
+
+            if (thread!=null){
+                thread.interrupt();
+            }
+
+
         }
     }
 

@@ -56,7 +56,7 @@ void loop()
            count++;
      if(count==1){
         RGB+=value*1000;
-        Serial.println(RGB);
+        
       }
        if(count==2){
         RGB+=value*100;

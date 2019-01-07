@@ -44,7 +44,8 @@
         <activity
             android:name=".Help"
             android:label="Help"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            android:theme="@style/ConnectAppTheme">
+
         </activity>
     </application>
 

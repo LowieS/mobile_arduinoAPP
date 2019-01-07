@@ -120,9 +120,7 @@ public class Leds extends AppCompatActivity {
             mBounded = true;
             BlueServer.LocalBinder mLocalBinder = (BlueServer.LocalBinder)service;
             mServer = mLocalBinder.getServerInstance();
-            seekBar_R.setProgress(mServer.R_waarde);
-            seekBar_G.setProgress(mServer.G_waarde);
-            seekBar_B.setProgress(mServer.B_waarde);
+            SetProgress();
 
 
         }
@@ -229,6 +227,23 @@ public class Leds extends AppCompatActivity {
 
     };
 
+    public void Sendcolor(int R,int G , int B){
+        mServer.R_waarde=R;
+        mServer.B_waarde=B;
+        mServer.G_waarde=G;
+        SetProgress();
+       // mServer.MyBlue.Send("0");
+
+
+    }
+
+    public void SetProgress(){
+        seekBar_R.setProgress(mServer.R_waarde);
+        seekBar_G.setProgress(mServer.G_waarde);
+        seekBar_B.setProgress(mServer.B_waarde);
+
+    }
+
 
     public void basicled(View view) {
         basicmenu = true;
@@ -264,7 +279,7 @@ public class Leds extends AppCompatActivity {
         basicmenu = false;
 
         button11.setTextColor(Color.parseColor("#CBCBCB"));
-        button12.setTextColor(Color.parseColor("#0000F"));
+        button12.setTextColor(Color.parseColor("#0000FF"));
 
         textViewColors.setVisibility(View.GONE);
 
@@ -279,7 +294,7 @@ public class Leds extends AppCompatActivity {
 
         text_B.setVisibility(View.VISIBLE);
         text_G.setVisibility(View.VISIBLE);
-        text_B.setVisibility(View.VISIBLE);
+        text_R.setVisibility(View.VISIBLE);
 
         seekBar_B.setVisibility(View.VISIBLE);
         seekBar_G.setVisibility(View.VISIBLE);

@@ -33,6 +33,7 @@
         android:text="@string/advancedled"
         android:textColor="#CBCBCB"
         android:textSize="24sp"
+        android:onClick="advancedled"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button11"
         app:layout_constraintTop_toTopOf="parent" />

@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.graphics.Color;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,7 +36,8 @@ public class Leds extends AppCompatActivity {
     TextView textViewLetR;
     TextView textViewLetG;
     TextView textViewLetB;
-
+    Button button11;
+    Button button12;
 
 
     TextView textView;
@@ -56,6 +58,9 @@ public class Leds extends AppCompatActivity {
         textViewLetB = findViewById(R.id.textViewLetB);
         textViewLetG = findViewById(R.id.textViewLetG);
         textViewLetR = findViewById(R.id.textViewLetR);
+
+        button11 = findViewById(R.id.button11);
+        button12 = findViewById(R.id.button12);
 
          seekBar_R = findViewById(R.id.seekBar_R);
         seekBar_R.setOnSeekBarChangeListener(seekBarChangeListener_R);
@@ -221,6 +226,8 @@ public class Leds extends AppCompatActivity {
 
     public void basicled(View view) {
         basicmenu = true;
+        button11.setTextColor(Color.parseColor("#0000FF"));
+        button12.setTextColor(Color.parseColor("#CBCBCB"));
 
         aquaBut.setVisibility(View.VISIBLE);        //R=0 G=255 B=255
         blueBut.setVisibility(View.VISIBLE);        //R=0 G=0 B=255
@@ -247,6 +254,9 @@ public class Leds extends AppCompatActivity {
 
     public void advancedled(View view) {
         basicmenu = false;
+
+        button11.setTextColor(Color.parseColor("#CBCBCB"));
+        button12.setTextColor(Color.parseColor("#0000F"));
 
         aquaBut.setVisibility(View.GONE);
         blueBut.setVisibility(View.GONE);

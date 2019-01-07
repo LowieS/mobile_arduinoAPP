@@ -19,25 +19,29 @@ public class Leds extends AppCompatActivity {
     TextView text_R;
     TextView text_G;
     TextView text_B;
+    SeekBar seekBar_R;
+    SeekBar seekBar_G;
+    SeekBar seekBar_B;
 
 
-TextView textView;
+
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leds);
 
-        SeekBar seekBar_R = findViewById(R.id.seekBar_R);
+         seekBar_R = findViewById(R.id.seekBar_R);
         seekBar_R.setOnSeekBarChangeListener(seekBarChangeListener_R);
 
         int progress_R = seekBar_R.getProgress();
 
-        SeekBar seekBar_G = findViewById(R.id.seekBar_G);
+         seekBar_G = findViewById(R.id.seekBar_G);
         seekBar_G.setOnSeekBarChangeListener(seekBarChangeListener_G);
 
         int progress_G = seekBar_G.getProgress();
 
-        SeekBar seekBar_B = findViewById(R.id.seekBar_B);
+        seekBar_B = findViewById(R.id.seekBar_B);
         seekBar_B.setOnSeekBarChangeListener(seekBarChangeListener_B);
 
         int progress_B = seekBar_B.getProgress();
@@ -79,6 +83,9 @@ TextView textView;
             mBounded = true;
             BlueServer.LocalBinder mLocalBinder = (BlueServer.LocalBinder)service;
             mServer = mLocalBinder.getServerInstance();
+            seekBar_R.setProgress(mServer.R_waarde);
+            seekBar_G.setProgress(mServer.G_waarde);
+            seekBar_B.setProgress(mServer.B_waarde);
 
 
         }
@@ -109,6 +116,7 @@ TextView textView;
 
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
+            mServer.R_waarde=seekBar.getProgress();
             if (seekBar.getProgress()<10){
                 mServer.MyBlue.Send("0"+"0"+"0"+seekBar.getProgress());
             }
@@ -139,6 +147,7 @@ TextView textView;
 
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
+            mServer.G_waarde=seekBar.getProgress();
             if (seekBar.getProgress()<10){
                 mServer.MyBlue.Send("1"+"0"+"0"+seekBar.getProgress());
             }
@@ -168,6 +177,7 @@ TextView textView;
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
             // called after the user finishes moving the SeekBar
+            mServer.B_waarde=seekBar.getProgress();
             if (seekBar.getProgress()<10){
                 mServer.MyBlue.Send("2"+"0"+ "0"+seekBar.getProgress());
             }

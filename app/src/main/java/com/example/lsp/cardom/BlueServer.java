@@ -12,6 +12,12 @@ public class BlueServer extends Service {
     Context Mycontext ;
     boolean check= false;
     BlueConnect MyBlue;
+    int R_waarde=50;
+    int G_waarde=50;
+    int B_waarde = 50;
+
+    boolean lamp1= false;
+    boolean lamp2=false;
 
     IBinder mBinder = new LocalBinder();
 

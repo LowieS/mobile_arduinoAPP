@@ -45,6 +45,8 @@ public class Lights extends AppCompatActivity {
             mBounded = true;
             BlueServer.LocalBinder mLocalBinder = (BlueServer.LocalBinder)service;
             mServer = mLocalBinder.getServerInstance();
+            GROOTLICHT=mServer.lamp1;
+            DIMLICHT=mServer.lamp2;
 
 
         }
@@ -72,6 +74,7 @@ public class Lights extends AppCompatActivity {
         }
 
         mServer.MyBlue.Send("1");
+        mServer.lamp1=GROOTLICHT;
 
 
     }
@@ -89,7 +92,10 @@ public class Lights extends AppCompatActivity {
         }
 
         mServer.MyBlue.Send("2");
+        mServer.lamp2=DIMLICHT;
     }
+
+    
 
 
 }

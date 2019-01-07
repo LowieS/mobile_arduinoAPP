@@ -44,17 +44,19 @@ void loop()
      {  
       if(LED){
         value = Serial.read()-48;
+        
           if(value==61){
           LED=false;
           c='m';
+          count=0;
+          RGB=0;
+          RGB_final=0;
         }
- 
-      // Bluetooth.readBytes((char*)&value, sizeof(value));
-      
-        
-      count++;
+        else{
+           count++;
      if(count==1){
         RGB+=value*1000;
+        Serial.println(RGB);
       }
        if(count==2){
         RGB+=value*100;
@@ -85,6 +87,15 @@ void loop()
         analogWrite(11,B);
      
       }
+          
+        }
+ 
+      // Bluetooth.readBytes((char*)&value, sizeof(value));
+      
+       // Serial.println(count);
+        //Serial.println(value);
+        
+     
     }
  
       else{

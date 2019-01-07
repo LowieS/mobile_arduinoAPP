@@ -62,7 +62,7 @@ public class Safety extends AppCompatActivity {
             mBounded = true;
             BlueServer.LocalBinder mLocalBinder = (BlueServer.LocalBinder) service;
             mServer = mLocalBinder.getServerInstance();
-            mServer.MyBlue.Send("4");
+
 
         }
     };

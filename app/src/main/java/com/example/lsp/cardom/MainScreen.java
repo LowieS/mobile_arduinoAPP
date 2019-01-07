@@ -81,4 +81,9 @@ public class MainScreen extends AppCompatActivity {
             mBounded = false;
         }
     };
+
+    public void goToHelp(View view) {
+        Intent intent2 = new Intent(this, Help.class);
+        startActivity(intent2);
+    }
 }

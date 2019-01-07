@@ -16,6 +16,7 @@
         android:background="@drawable/help_ball"
         android:text="?"
         android:textColor="#FFFFFF"
+        android:onClick="goToHelp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

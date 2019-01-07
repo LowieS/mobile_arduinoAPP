@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +23,18 @@ public class Leds extends AppCompatActivity {
     SeekBar seekBar_R;
     SeekBar seekBar_G;
     SeekBar seekBar_B;
+    boolean basicmenu;
+    Button aquaBut;
+    Button blueBut;
+    Button greenBut;
+    Button orangeBut;
+    Button pinkBut;
+    Button redBut;
+    Button violetBut;
+    Button yellowBut;
+    TextView textViewLetR;
+    TextView textViewLetG;
+    TextView textViewLetB;
 
 
 
@@ -30,6 +43,19 @@ public class Leds extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leds);
+
+        aquaBut = findViewById(R.id.aquaBut);
+        blueBut = findViewById(R.id.blueBut);
+        orangeBut = findViewById(R.id.orangeBut);
+        greenBut = findViewById(R.id.greenBut);
+        pinkBut = findViewById(R.id.pinkBut);
+        redBut = findViewById(R.id.redBut);
+        violetBut = findViewById(R.id.violetBut);
+        yellowBut = findViewById(R.id.yellowBut);
+
+        textViewLetB = findViewById(R.id.textViewLetB);
+        textViewLetG = findViewById(R.id.textViewLetG);
+        textViewLetR = findViewById(R.id.textViewLetR);
 
          seekBar_R = findViewById(R.id.seekBar_R);
         seekBar_R.setOnSeekBarChangeListener(seekBarChangeListener_R);
@@ -193,7 +219,54 @@ public class Leds extends AppCompatActivity {
     };
 
 
+    public void basicled(View view) {
+        basicmenu = true;
+
+        aquaBut.setVisibility(View.VISIBLE);
+        blueBut.setVisibility(View.VISIBLE);
+        orangeBut.setVisibility(View.VISIBLE);
+        greenBut.setVisibility(View.VISIBLE);
+        pinkBut.setVisibility(View.VISIBLE);
+        redBut.setVisibility(View.VISIBLE);
+        violetBut.setVisibility(View.VISIBLE);
+        yellowBut.setVisibility(View.VISIBLE);
+
+        text_B.setVisibility(View.GONE);
+        text_G.setVisibility(View.GONE);
+        text_B.setVisibility(View.GONE);
+
+        seekBar_B.setVisibility(View.GONE);
+        seekBar_G.setVisibility(View.GONE);
+        seekBar_R.setVisibility(View.GONE);
+
+        textViewLetR.setVisibility(View.GONE);
+        textViewLetG.setVisibility(View.GONE);
+        textViewLetB.setVisibility(View.GONE);
+    }
 
 
+    public void advancedled(View view) {
+        basicmenu = false;
 
+        aquaBut.setVisibility(View.GONE);
+        blueBut.setVisibility(View.GONE);
+        orangeBut.setVisibility(View.GONE);
+        greenBut.setVisibility(View.GONE);
+        pinkBut.setVisibility(View.GONE);
+        redBut.setVisibility(View.GONE);
+        violetBut.setVisibility(View.GONE);
+        yellowBut.setVisibility(View.GONE);
+
+        text_B.setVisibility(View.VISIBLE);
+        text_G.setVisibility(View.VISIBLE);
+        text_B.setVisibility(View.VISIBLE);
+
+        seekBar_B.setVisibility(View.VISIBLE);
+        seekBar_G.setVisibility(View.VISIBLE);
+        seekBar_R.setVisibility(View.VISIBLE);
+
+        textViewLetR.setVisibility(View.VISIBLE);
+        textViewLetG.setVisibility(View.VISIBLE);
+        textViewLetB.setVisibility(View.VISIBLE);
+    }
 }

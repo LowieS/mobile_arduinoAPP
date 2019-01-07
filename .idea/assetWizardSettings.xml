@@ -34,11 +34,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="height" value="19" />
-                            <entry key="outputName" value="ic_cross" />
+                            <entry key="height" value="20" />
+                            <entry key="outputName" value="help_ball" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\michi\OneDrive\Documents\GitHub\mobile_arduinoAPP\Mockup\Assets\Help\cross.svg" />
-                            <entry key="width" value="19" />
+                            <entry key="sourceFile" value="C:\Users\michi\OneDrive\Documents\GitHub\mobile_arduinoAPP\Mockup\Assets\Help\Symbol 2 – 3.svg" />
+                            <entry key="width" value="20" />
                           </map>
                         </option>
                       </PersistentState>

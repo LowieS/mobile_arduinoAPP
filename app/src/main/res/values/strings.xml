@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">CarDom</string>
+    <string name="app_name">Android Car</string>
+    <string name="main_menu">MAIN MENU</string>
+    <string name="led">LED</string>
+    <string name="lights">LIGHTS</string>
+    <string name="parking">PARKING</string>
+    <string name="grootlicht">GROOTLICHT</string>
+    <string name="dimlicht">DIMLICHT</string>
+    <string name="ledmenu">\t\t\t\t\LED</string>
+    <string name="audiomenu">\t\t\t\t\AUDIO</string>
+    <string name="lightsmenu">\t\t\t\t\LIGHTS</string>
+    <string name="heatingmenu">\t\t\t\t\tHEATING</string>
+    <string name="parkingmenu">P\t\t\t\t\t\t\PARKING</string>
+    <string name="safetymenu">\t\t\t\t\SAFETY</string>
+    <string name="addmenu">\t\t\t\t\ADD</string>
 </resources>

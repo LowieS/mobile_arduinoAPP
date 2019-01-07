@@ -37,6 +37,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
+        android:id="@+id/viewBasic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button11">
+
+
+    </View>
+
+    <View
         android:id="@+id/viewAdvanced"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -180,16 +192,6 @@
             app:layout_constraintStart_toStartOf="parent" />
     </View>
 
-    <View
-        android:id="@+id/viewBasic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button11">
-
-    </View>
     <!--
     <Button
         android:id="@+id/button11"

@@ -45,6 +45,7 @@ public class Lights extends AppCompatActivity {
             mBounded = true;
             BlueServer.LocalBinder mLocalBinder = (BlueServer.LocalBinder)service;
             mServer = mLocalBinder.getServerInstance();
+            mServer.MyBlue.Send("1");
 
         }
     };
@@ -90,10 +91,5 @@ public class Lights extends AppCompatActivity {
         mServer.MyBlue.Send("2");
     }
 
-    public void PrevMenu(View view) {
-        Intent intent1 = new Intent(this, MenuScreen.class);
 
-        mServer.MyBlue.Send("m");
-        startActivity(intent1);
-    }
 }

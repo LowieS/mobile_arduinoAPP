@@ -79,6 +79,7 @@ TextView textView;
             mBounded = true;
             BlueServer.LocalBinder mLocalBinder = (BlueServer.LocalBinder)service;
             mServer = mLocalBinder.getServerInstance();
+            mServer.MyBlue.Send("0");
 
         }
     };
@@ -182,12 +183,7 @@ TextView textView;
     };
 
 
-    public void PrevMenu(View view) {
-        Intent intent1 = new Intent(this, MenuScreen.class);
 
-        mServer.MyBlue.Send("0256");
-        startActivity(intent1);
-    }
 
 
 }

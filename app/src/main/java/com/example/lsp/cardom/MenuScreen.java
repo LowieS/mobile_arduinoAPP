@@ -55,19 +55,19 @@ public class MenuScreen extends AppCompatActivity {
     };
 
     public void StartLED(View view) {
-        mServer.MyBlue.Send("0");
+
         Intent intent1 = new Intent(this,Leds.class);
         startActivity(intent1);
     }
 
     public void StartLights(View view) {
-        mServer.MyBlue.Send("1");
+
         Intent intent1 = new Intent(this,Lights.class);
         startActivity(intent1);
     }
 
     public void StartSafety(View view) {
-        mServer.MyBlue.Send("4");
+
         Intent intent1 = new Intent(this,Safety.class);
         startActivity(intent1);
     }

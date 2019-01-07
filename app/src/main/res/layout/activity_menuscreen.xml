@@ -19,7 +19,7 @@
         android:drawableLeft="@drawable/ic_brightness_medium_24px"
         android:onClick="StartLED"
         android:paddingLeft="20dp"
-        android:text="@string/led"
+        android:text="@string/ledmenu"
         android:textAlignment="viewStart"
         android:textColor="#FFFFFF"
         android:textSize="30sp"

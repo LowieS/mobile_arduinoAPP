@@ -10,7 +10,7 @@
         android:id="@+id/button11"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="184dp"
-        android:layout_height="50dp"
+        android:layout_height="64dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
@@ -25,7 +25,7 @@
         android:id="@+id/button12"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="184dp"
-        android:layout_height="50dp"
+        android:layout_height="64dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -36,151 +36,235 @@
         app:layout_constraintStart_toEndOf="@+id/button11"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/view2"
+    <TextView
+        android:id="@+id/textView_G"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="0"
+        android:textColor="#0000FF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar_G"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_B"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="0"
+        android:textColor="#00FF00"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar_B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="112dp"
+        android:text="R"
+        android:textColor="#FF0000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="248dp"
+        android:text="B"
+        android:textColor="#0000FF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="388dp"
+        android:text="G"
+        android:textColor="#00FF00"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar_R"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="20dp"
+        android:max="255"
+        android:min="0"
+        android:progress="50"
+        android:progressBackgroundTint="#FF0000"
+        android:progressTint="#FF0000"
+        android:thumbTint="#FF0000"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <android.support.constraint.ConstraintLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView_G"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="0"
-            android:textColor="#0000FF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/seekBar_G"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+    <SeekBar
+        android:id="@+id/seekBar_G"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="20dp"
+        android:max="255"
+        android:min="0"
+        android:progress="50"
+        android:progressBackgroundTint="#0000FF"
+        android:progressTint="#0000FF"
+        android:thumbTint="#0000FF"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar_R" />
 
-        <TextView
-            android:id="@+id/textView_B"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="0"
-            android:textColor="#00FF00"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/seekBar_B"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+    <SeekBar
+        android:id="@+id/seekBar_B"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="20dp"
+        android:max="255"
+        android:min="0"
+        android:progress="50"
+        android:progressBackgroundTint="#00FF00"
+        android:progressTint="#00FF00"
+        android:thumbTint="#00FF00"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar_G" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="112dp"
-            android:text="R"
-            android:textColor="#FF0000"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textView_R"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="0"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar_R"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="248dp"
-            android:text="B"
-            android:textColor="#0000FF"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/aquaBut"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="148dp"
+        android:background="@drawable/ic_aqualed"
+        android:text=""
+        app:layout_constraintStart_toStartOf="@+id/button11"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="388dp"
-            android:text="G"
-            android:textColor="#00FF00"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/blueBut"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="148dp"
+        android:background="@drawable/ic_blueled"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/aquaBut"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <SeekBar
-            android:id="@+id/seekBar_R"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="120dp"
-            android:layout_marginEnd="20dp"
-            android:max="255"
-            android:min="0"
-            android:progress="50"
-            android:progressBackgroundTint="#FF0000"
-            android:progressTint="#FF0000"
-            android:thumbTint="#FF0000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/greenBut"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="148dp"
+        android:background="@drawable/ic_greenled"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/blueBut"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <SeekBar
-            android:id="@+id/seekBar_G"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="120dp"
-            android:layout_marginEnd="20dp"
-            android:max="255"
-            android:min="0"
-            android:progress="50"
-            android:progressBackgroundTint="#0000FF"
-            android:progressTint="#0000FF"
-            android:thumbTint="#0000FF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seekBar_R" />
+    <Button
+        android:id="@+id/orangeBut"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_orangeled"
+        android:text=""
+        app:layout_constraintStart_toStartOf="@+id/button11"
+        app:layout_constraintTop_toBottomOf="@+id/aquaBut" />
 
-        <SeekBar
-            android:id="@+id/seekBar_B"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="120dp"
-            android:layout_marginEnd="20dp"
-            android:max="255"
-            android:min="0"
-            android:progress="50"
-            android:progressBackgroundTint="#00FF00"
-            android:progressTint="#00FF00"
-            android:thumbTint="#00FF00"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seekBar_G" />
+    <Button
+        android:id="@+id/pinkBut"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_pinkled"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/violetBut"
+        app:layout_constraintTop_toBottomOf="@+id/greenBut" />
 
-        <TextView
-            android:id="@+id/textView_R"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="0"
-            android:textColor="#FF0000"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/seekBar_R"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-        </android.support.constraint.ConstraintLayout>
-    </View>
+    <Button
+        android:id="@+id/redBut"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="148dp"
+        android:background="@drawable/ic_redled"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/greenBut"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/violetBut"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_violetled"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/orangeBut"
+        app:layout_constraintTop_toBottomOf="@+id/blueBut" />
+
+    <Button
+        android:id="@+id/yellowBut"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_yellowled"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/pinkBut"
+        app:layout_constraintTop_toBottomOf="@+id/redBut" />
 
     <!--
     <Button

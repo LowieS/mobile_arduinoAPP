@@ -38,6 +38,7 @@ public class Leds extends AppCompatActivity {
     TextView textViewLetB;
     Button button11;
     Button button12;
+    TextView textViewColors;
 
 
     TextView textView;
@@ -58,6 +59,8 @@ public class Leds extends AppCompatActivity {
         textViewLetB = findViewById(R.id.textViewLetB);
         textViewLetG = findViewById(R.id.textViewLetG);
         textViewLetR = findViewById(R.id.textViewLetR);
+
+        textViewColors = findViewById(R.id.textViewColors);
 
         button11 = findViewById(R.id.button11);
         button12 = findViewById(R.id.button12);
@@ -229,6 +232,8 @@ public class Leds extends AppCompatActivity {
         button11.setTextColor(Color.parseColor("#0000FF"));
         button12.setTextColor(Color.parseColor("#CBCBCB"));
 
+        textViewColors.setVisibility(View.VISIBLE);
+
         aquaBut.setVisibility(View.VISIBLE);        //R=0 G=255 B=255
         blueBut.setVisibility(View.VISIBLE);        //R=0 G=0 B=255
         orangeBut.setVisibility(View.VISIBLE);      //R=255 G=136 B=0
@@ -257,6 +262,8 @@ public class Leds extends AppCompatActivity {
 
         button11.setTextColor(Color.parseColor("#CBCBCB"));
         button12.setTextColor(Color.parseColor("#0000F"));
+
+        textViewColors.setVisibility(View.GONE);
 
         aquaBut.setVisibility(View.GONE);
         blueBut.setVisibility(View.GONE);

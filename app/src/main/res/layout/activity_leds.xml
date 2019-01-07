@@ -269,6 +269,18 @@
         app:layout_constraintStart_toEndOf="@+id/pinkBut"
         app:layout_constraintTop_toBottomOf="@+id/redBut" />
 
+    <TextView
+        android:id="@+id/textViewColors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="112dp"
+        android:text="COLORS"
+        android:textColor="#0000FF"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button11" />
+
     <!--
     <Button
         android:id="@+id/button11"

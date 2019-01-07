@@ -152,15 +152,8 @@ public class Leds extends AppCompatActivity {
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
             mServer.R_waarde=seekBar.getProgress();
-            if (seekBar.getProgress()<10){
-                mServer.MyBlue.Send("0"+"0"+"0"+seekBar.getProgress());
-            }
-            else if (seekBar.getProgress()<100){
-                mServer.MyBlue.Send("0"+"0"+seekBar.getProgress());
-            }
-            else {
-                mServer.MyBlue.Send("0" + seekBar.getProgress());
-            }
+            Send_R(mServer.R_waarde);
+
 
             // called after the user finishes moving the SeekBar
         }
@@ -183,15 +176,7 @@ public class Leds extends AppCompatActivity {
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
             mServer.G_waarde=seekBar.getProgress();
-            if (seekBar.getProgress()<10){
-                mServer.MyBlue.Send("1"+"0"+"0"+seekBar.getProgress());
-            }
-            else if (seekBar.getProgress()<100){
-                mServer.MyBlue.Send("1"+"0"+seekBar.getProgress());
-            }
-            else {
-                mServer.MyBlue.Send("1" + seekBar.getProgress());
-            }
+          Send_G(mServer.G_waarde);
         }
 
 
@@ -213,26 +198,22 @@ public class Leds extends AppCompatActivity {
         public void onStopTrackingTouch(SeekBar seekBar) {
             // called after the user finishes moving the SeekBar
             mServer.B_waarde=seekBar.getProgress();
-            if (seekBar.getProgress()<10){
-                mServer.MyBlue.Send("2"+"0"+ "0"+seekBar.getProgress());
-            }
-            else if (seekBar.getProgress()<100){
-                mServer.MyBlue.Send("2"+"0"+seekBar.getProgress());
-            }
-            else {
-                mServer.MyBlue.Send("2" + seekBar.getProgress());
-            }
+           Send_B(mServer.B_waarde);
         }
 
 
     };
 
-    public void Sendcolor(int R,int G , int B){
+    public void Sendcolor_button(int R,int G , int B){
         mServer.R_waarde=R;
         mServer.B_waarde=B;
         mServer.G_waarde=G;
         SetProgress();
-       // mServer.MyBlue.Send("0");
+        Send_B(mServer.B_waarde);
+        Send_G(mServer.G_waarde);
+        Send_R(mServer.R_waarde);
+
+
 
 
     }
@@ -241,6 +222,47 @@ public class Leds extends AppCompatActivity {
         seekBar_R.setProgress(mServer.R_waarde);
         seekBar_G.setProgress(mServer.G_waarde);
         seekBar_B.setProgress(mServer.B_waarde);
+        text_R.setText("value:"+mServer.R_waarde);
+        text_G.setText("value:"+mServer.G_waarde);
+        text_B.setText("value:"+mServer.B_waarde);
+
+    }
+
+    public void Send_R(int R){
+        if (R<10){
+            mServer.MyBlue.Send("0"+"0"+"0"+R);
+        }
+        else if (R<100){
+            mServer.MyBlue.Send("0"+"0"+R);
+        }
+        else {
+            mServer.MyBlue.Send("0" +R);
+        }
+
+    }
+    public void Send_G(int G){
+        if (G<10){
+            mServer.MyBlue.Send("2"+"0"+"0"+G);
+        }
+        else if (G<100){
+            mServer.MyBlue.Send("2"+"0"+G);
+        }
+        else {
+            mServer.MyBlue.Send("2" +G);
+        }
+
+    }
+
+    public void Send_B(int B){
+        if (B<10){
+            mServer.MyBlue.Send("1"+"0"+"0"+B);
+        }
+        else if (B<100){
+            mServer.MyBlue.Send("1"+"0"+B);
+        }
+        else {
+            mServer.MyBlue.Send("1" +B);
+        }
 
     }
 
@@ -303,5 +325,38 @@ public class Leds extends AppCompatActivity {
         textViewLetR.setVisibility(View.VISIBLE);
         textViewLetG.setVisibility(View.VISIBLE);
         textViewLetB.setVisibility(View.VISIBLE);
+    }
+
+
+    public void Send_aqua(View view) {
+        Sendcolor_button(0,255,255);
+    }
+
+    public void Send_blue(View view) {
+        Sendcolor_button(0,0,255);
+    }
+
+    public void Send_green(View view) {
+        Sendcolor_button(0,255,0);
+    }
+
+    public void Send_orange(View view) {
+        Sendcolor_button(255,136,0);
+    }
+
+    public void Send_pink(View view) {
+        Sendcolor_button(255,0,238);
+    }
+
+    public void Send_red(View view) {
+        Sendcolor_button(255,0,0);
+    }
+
+    public void Send_violet(View view) {
+        Sendcolor_button(185,0,142);
+    }
+
+    public void Send_yellow(View view) {
+        Sendcolor_button(255,255,0);
     }
 }

@@ -47,7 +47,7 @@
         android:layout_marginBottom="8dp"
         android:text="0"
         android:onClick="advancedled"
-        android:textColor="#0000FF"
+        android:textColor="#00FF00"
         android:textSize="18sp"
         android:textStyle="bold"
         android:visibility="gone"
@@ -63,7 +63,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="0"
-        android:textColor="#00FF00"
+        android:textColor="#0000FF"
         android:textSize="18sp"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/seekBar_B"
@@ -131,7 +131,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <SeekBar
-        android:id="@+id/seekBar_G"
+        android:id="@+id/seekBar_B"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -149,7 +149,7 @@
         app:layout_constraintTop_toBottomOf="@+id/seekBar_R" />
 
     <SeekBar
-        android:id="@+id/seekBar_B"
+        android:id="@+id/seekBar_G"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -164,7 +164,7 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar_G" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBar_B" />
 
     <TextView
         android:id="@+id/textView_R"
@@ -191,7 +191,8 @@
         android:background="@drawable/ic_aqualed"
         android:text=""
         app:layout_constraintStart_toStartOf="@+id/button11"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="Send_aqua"/>
 
     <Button
         android:id="@+id/blueBut"
@@ -202,7 +203,8 @@
         android:background="@drawable/ic_blueled"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/aquaBut"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="Send_blue"/>
 
     <Button
         android:id="@+id/greenBut"
@@ -213,7 +215,8 @@
         android:background="@drawable/ic_greenled"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/blueBut"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="Send_green"/>
 
     <Button
         android:id="@+id/orangeBut"
@@ -224,7 +227,8 @@
         android:background="@drawable/ic_orangeled"
         android:text=""
         app:layout_constraintStart_toStartOf="@+id/button11"
-        app:layout_constraintTop_toBottomOf="@+id/aquaBut" />
+        app:layout_constraintTop_toBottomOf="@+id/aquaBut"
+        android:onClick="Send_orange"/>
 
     <Button
         android:id="@+id/pinkBut"
@@ -235,7 +239,8 @@
         android:background="@drawable/ic_pinkled"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/violetBut"
-        app:layout_constraintTop_toBottomOf="@+id/greenBut" />
+        app:layout_constraintTop_toBottomOf="@+id/greenBut"
+        android:onClick="Send_pink"/>
 
     <Button
         android:id="@+id/redBut"
@@ -246,7 +251,8 @@
         android:background="@drawable/ic_redled"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/greenBut"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="Send_red"/>
 
     <Button
         android:id="@+id/violetBut"
@@ -257,7 +263,8 @@
         android:background="@drawable/ic_violetled"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/orangeBut"
-        app:layout_constraintTop_toBottomOf="@+id/blueBut" />
+        app:layout_constraintTop_toBottomOf="@+id/blueBut"
+        android:onClick="Send_violet"/>
 
     <Button
         android:id="@+id/yellowBut"
@@ -268,7 +275,8 @@
         android:background="@drawable/ic_yellowled"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/pinkBut"
-        app:layout_constraintTop_toBottomOf="@+id/redBut" />
+        app:layout_constraintTop_toBottomOf="@+id/redBut"
+        android:onClick="Send_yellow"/>
 
     <TextView
         android:id="@+id/textViewColors"

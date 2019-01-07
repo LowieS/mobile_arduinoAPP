@@ -42,8 +42,10 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        <android.support.constraint.ConstraintLayout>
 
         <TextView
             android:id="@+id/textView_G"
@@ -177,7 +179,7 @@
             app:layout_constraintBottom_toTopOf="@+id/seekBar_R"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
+        </android.support.constraint.ConstraintLayout>
     </View>
 
     <!--

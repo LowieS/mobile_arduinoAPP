@@ -17,6 +17,8 @@ public class Lights extends AppCompatActivity {
     boolean GROOTLICHT = false;
     boolean DIMLICHT = false;
     BlueServer mServer;
+    Button GROOTLICHTbut;
+    Button DIMLICHTbut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,8 @@ public class Lights extends AppCompatActivity {
 
         Intent mIntent = new Intent(this, BlueServer.class);
         bindService(mIntent, mConnection, BIND_AUTO_CREATE);
+         GROOTLICHTbut = findViewById(R.id.button8);
+         DIMLICHTbut = findViewById(R.id.button9);
     };
 
     ServiceConnection mConnection = new ServiceConnection() {
@@ -47,6 +51,8 @@ public class Lights extends AppCompatActivity {
             mServer = mLocalBinder.getServerInstance();
             GROOTLICHT=mServer.lamp1;
             DIMLICHT=mServer.lamp2;
+            Check_Groot();
+            Check_Dim();
 
 
         }
@@ -63,15 +69,8 @@ public class Lights extends AppCompatActivity {
 
     public void SEND1(View view) {
         GROOTLICHT = !GROOTLICHT;
-        Button GROOTLICHTbut = findViewById(R.id.button8);
-        if(GROOTLICHT == true){
-            GROOTLICHTbut.setBackgroundResource(R.drawable.lights_enabled);
-            GROOTLICHTbut.setTextColor(Color.parseColor("#0000FF"));
-        }
-        else if(GROOTLICHT == false){
-            GROOTLICHTbut.setBackgroundResource(R.drawable.lights_disabled);
-            GROOTLICHTbut.setTextColor(Color.parseColor("#CBCBCB"));
-        }
+        Check_Groot();
+
 
         mServer.MyBlue.Send("1");
         mServer.lamp1=GROOTLICHT;
@@ -81,21 +80,37 @@ public class Lights extends AppCompatActivity {
 
     public void SEND2(View view) {
         DIMLICHT = !DIMLICHT;
-        Button DIMLICHTbut = findViewById(R.id.button9);
-        if(DIMLICHT == true){
-            DIMLICHTbut.setBackgroundResource(R.drawable.lights_enabled);
-            DIMLICHTbut.setTextColor(Color.parseColor("#0000FF"));
-        }
-        else if(DIMLICHT == false){
-            DIMLICHTbut.setBackgroundResource(R.drawable.lights_disabled);
-            DIMLICHTbut.setTextColor(Color.parseColor("#CBCBCB"));
-        }
+
+       Check_Dim();
 
         mServer.MyBlue.Send("2");
         mServer.lamp2=DIMLICHT;
     }
 
-    
+public void Check_Groot(){
+    if(GROOTLICHT == true){
+        GROOTLICHTbut.setBackgroundResource(R.drawable.lights_enabled);
+        GROOTLICHTbut.setTextColor(Color.parseColor("#0000FF"));
+    }
+    else if(GROOTLICHT == false){
+        GROOTLICHTbut.setBackgroundResource(R.drawable.lights_disabled);
+        GROOTLICHTbut.setTextColor(Color.parseColor("#CBCBCB"));
+    }
+
+
+}
+
+public void Check_Dim(){
+    if(DIMLICHT == true){
+        DIMLICHTbut.setBackgroundResource(R.drawable.lights_enabled);
+        DIMLICHTbut.setTextColor(Color.parseColor("#0000FF"));
+    }
+    else if(DIMLICHT == false){
+        DIMLICHTbut.setBackgroundResource(R.drawable.lights_disabled);
+        DIMLICHTbut.setTextColor(Color.parseColor("#CBCBCB"));
+    }
+
+}
 
 
 }
